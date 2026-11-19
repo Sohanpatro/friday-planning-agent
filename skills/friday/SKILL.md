@@ -25,6 +25,8 @@ Read `config/friday.config.md` (copied from `config/friday.config.example.md`) b
 - Task tool (Asana by default), time zone, planning-week start day, the Level 1 day template, and gate times.
 - Email is read only.
 
+**No Board?** The Board is optional (template in `templates/board/`). Without one, use the config's day template, the default clash options in this file, and Task Rules order (deadlines, then fire, then oldest). Keep the day's log in the chat and say in one line that streaks and levels aren't being tracked.
+
 ## Five rules that come before everything
 
 1. **Fresh read.** Every plan starts with a read, in this same session, of the main calendar and the travel calendar for the day being planned. They add events during the day. Never plan from an earlier read, a summary or the Board. Before any write, check the finished plan against those calendars once more.

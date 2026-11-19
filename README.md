@@ -49,7 +49,7 @@ The weekly run uses the bundled `one-shot-weekly-planning` skill. Then Friday ad
 - **A level system, not willpower.** A ladder of levels with streaks unlocks more focus sessions only after you've proven you can deliver the current level.
 - **Pre-reasoned clash handling.** A *Day Shapes* table holds the options for each kind of conflict, so a small model can run the system reliably.
 - **Writes to its own calendar.** Your main calendar is read-only. Friday writes only to the Friday calendar.
-- **Stateless, with memory in your own storage.** The Board (Google Sheet) holds your canon, log, rules and journal.
+- **Stateless, with memory in your own storage.** The optional Board (a Google Sheet) holds your canon, log, rules and journal, for more precise results.
 
 ## Repository layout
 
@@ -58,6 +58,7 @@ skills/
 ├── friday/SKILL.md                  # daily co-pilot: close, replan, status, weekly
 └── one-shot-weekly-planning/        # the weekly planning run (Stage 1)
     ├── SKILL.md, prompts/, references/, scripts/check.py
+templates/board/                     # optional Board: 12 CSV tabs with sample data
 config/
 └── friday.config.example.md         # your IDs, calendars, day template (copy → friday.config.md, gitignored)
 assets/                              # README visuals
@@ -68,7 +69,8 @@ assets/                              # README visuals
 **Requirements:** Claude (claude.ai, the desktop app, or Claude Code) with Google Calendar, Google Sheets and Asana connected. Python 3 for `check.py`.
 
 1. Clone the repo: `git clone https://github.com/Sohanpatro/friday-planning-agent.git`
-2. Copy `config/friday.config.example.md` to `config/friday.config.md`. Fill in your Board sheet, your calendars and your day template. Create a separate "Friday" Google calendar for Friday to write to.
+2. Copy `config/friday.config.example.md` to `config/friday.config.md`. Fill in your calendars and your day template, and create a separate "Friday" Google calendar for Friday to write to.
+   - *Optional, for more precise results:* set up the **Friday Board** from [`templates/board/`](templates/board/). It takes about 3 minutes, and the sample data is already in place.
 3. Install both folders under `skills/`. In **Claude Code**, copy them to `~/.claude/skills/`. On **claude.ai**, zip each folder and upload it under Settings → Capabilities → Skills.
 4. At 8 PM, say **"Friday, close"**.
 
@@ -76,7 +78,7 @@ assets/                              # README visuals
 
 - [x] **Stage 1**: the weekly pre-planning skill
 - [x] **Stage 2**: Friday, the daily co-pilot (gates, nightly close, replan, ladder, weekly run)
-- [ ] A Board template (Google Sheet) you can copy
+- [x] A Board template with sample data (optional)
 - [ ] An integration guide for upstream demand agents (job prep, study plans)
 - [ ] Routing-eval results
 

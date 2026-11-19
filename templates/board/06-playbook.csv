@@ -1,0 +1,5 @@
+Item,Rule
+Close clock,8:10-8:25 PM joint session; hard stop 8:30; undecided items keep defaults
+Short close,If Gate 3 starts late: log + tomorrow's first session only
+Restart protocol,Missed a gate: ask once what got in the way; point to next gate
+Amnesty,Old overdue backlog cleared once at a weekly run with approval

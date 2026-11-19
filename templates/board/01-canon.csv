@@ -1,0 +1,9 @@
+Section,Key,Value,Note
+State,level,1,Current ladder level
+State,clean_streak,3,Consecutive clean days
+State,spine_written_through,2027-03-07,Last date standard blocks exist on the Friday calendar
+State,trial_review,2027-03-28,Date of the first system review
+Setup,week_starts,Saturday,
+Setup,real_recurring,"Team standup; Sunday family call; Weekly 1:1",Recurring events that count as real appointments
+Personal facts,breakfast,Oatmeal and coffee,Stated by user
+Personal facts,gym_days,Mon-Fri,Stated by user

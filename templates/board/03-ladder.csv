@@ -1,0 +1,4 @@
+Level,Sessions per day,Unlock rule,Drop rule
+1,3,5 clean days in a row,
+2,4,7 clean days in a row,3 missed gates in a week
+3,5,Hold for 2 weeks,3 missed gates in a week

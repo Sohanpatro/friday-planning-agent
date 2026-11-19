@@ -1,0 +1,5 @@
+Priority,Rule,Where it goes
+1,Deadline today or earlier,Tomorrow's Tasks block
+2,🔥 in title (high importance),Tasks block or next flex
+3,Oldest first,Re-date by real availability
+-,Timed thing (has a clock time),Calendar not Tasks block
