@@ -1,4 +1,13 @@
-# Friday — a weekly pre-planning agent
+# Friday — AI Weekly Planning Agent for Claude (Agent Skills)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Claude Agent Skills](https://img.shields.io/badge/Claude-Agent%20Skills-DA7857?logo=anthropic)](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
+[![Works with Google Calendar](https://img.shields.io/badge/Google%20Calendar-supported-4285F4?logo=googlecalendar&logoColor=white)](#getting-started)
+[![Works with Asana](https://img.shields.io/badge/Asana-supported-F06A6A?logo=asana&logoColor=white)](#getting-started)
+[![GitHub stars](https://img.shields.io/github/stars/Sohanpatro/friday-planning-agent?style=social)](https://github.com/Sohanpatro/friday-planning-agent/stargazers)
+
+> An open-source **AI planning assistant** that turns your Google Calendar and Asana tasks into a focused weekly plan — a human-in-the-loop, multi-agent **productivity agent** built on Claude Agent Skills.
+
 
 **Friday** is an agentic planning co-pilot built as a set of [Claude Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview). It reads your calendar and task tool, asks you a few sharp questions about last week, and hands back a plan for the week you can approve, tweak, or keep as advice — in about 30 minutes of your time.
 
@@ -63,6 +72,10 @@ skills/one-shot-weekly-planning/
 - [x] **Stage 1** — core weekly pre-planning skill
 - [ ] **Stage 2** — full Friday suite: nightly close & tomorrow plan, "I fell off" replanning, Asana/Hashira blocks onto a dedicated Friday calendar, Google Drive plan archive
 - [ ] Routing-eval results and sample (anonymized) weekly report
+
+## Contributing
+
+Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, a ⭐ helps others find it.
 
 ## License
 
