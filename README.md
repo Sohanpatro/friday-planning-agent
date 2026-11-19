@@ -10,6 +10,9 @@
 
 > An open-source **AI planning assistant** that matches your **time demand** (tasks, goals, an upstream agent's study blocks) with your **time supply** (your calendar). A human-in-the-loop **productivity agent** built on Claude Agent Skills, working with Google Calendar, Google Sheets and Asana.
 
+## Contents
+- [Why](#why) · [How it works](#how-it-works) · [Usage examples](#usage-examples) · [Works with Hashira](#works-with-hashira) · [Repository layout](#repository-layout) · [Getting started](#getting-started) · [Roadmap](#roadmap) · [FAQ](#faq) · [Contributing](#contributing)
+
 ## Why
 
 Most people's plans are fine. Their days just don't follow them. We keep appointments with other people and skip the ones with ourselves. A quick phone check turns into hours. A late night causes an afternoon crash.
@@ -51,6 +54,31 @@ The weekly run uses the bundled `one-shot-weekly-planning` skill. Then Friday ad
 - **Writes to its own calendar.** Your main calendar is read-only. Friday writes only to the Friday calendar.
 - **Stateless, with memory in your own storage.** The optional Board (a Google Sheet) holds your canon, log, rules and journal, for more precise results.
 
+## Usage examples
+
+| Say | What happens |
+|---|---|
+| `Friday, close` | 20-minute nightly session: tomorrow's demand vs. supply, the clashes and options; you decide, then approve the writes |
+| `I fell off` | One-minute replan to the next gate, without rebuilding the day |
+| `where am I` | Your level, streak and the gates left today |
+| `plan my week` | The full weekly run: five questions on last week, a Plan Card, and next week's standard blocks |
+| `move the gym to 4 PM` | Updates tomorrow's plan; nothing is written until you approve |
+
+## Works with Hashira
+
+Friday supplies the **time**. An upstream agent supplies the **demand**. [Hashira](https://github.com/Sohanpatro/hashira-the-complete-job-agent), the complete AI job search agent, writes daily study, interview-prep and search blocks, and Friday fits them into your real calendar.
+
+```mermaid
+flowchart LR
+    H[Hashira<br/>job-search lead] -->|"Day plan rows<br/>(blocks, length, energy)"| B[(Shared tracker / Board)]
+    A[Asana tasks] --> F
+    B --> F[Friday<br/>nightly close]
+    C[Your Google Calendar<br/>read-only] --> F
+    F -->|you approve| FC[Friday calendar]
+    F -->|"Friday capacity<br/>(what fit, what didn't)"| B
+    B --> H
+```
+
 ## Repository layout
 
 ```
@@ -86,9 +114,21 @@ assets/                              # README visuals
 
 The weekly run is inspired by the **Lifehack Method's Win the Week** ([lifehackmethod.com](https://lifehackmethod.com)).
 
+## FAQ
+
+**What is Friday?** An open-source AI planning agent, built as Claude Agent Skills, that plans your day and week with you from your Google Calendar and Asana tasks.
+
+**Does it change my calendar?** Only a separate "Friday" calendar, and only after you approve. Your main calendar is read-only.
+
+**Do I need Asana?** It works best with it. The weekly skill's connector notes cover other task tools.
+
+**Will it decide my priorities?** No. Friday lists the demand, supply and clashes; you make every call.
+
+**Which Claude plan do I need?** Any plan that supports Skills and the Google Calendar connector.
+
 ## Contributing
 
-Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, a ⭐ helps other people find it.
+Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, **⭐ star the repo** so other people can find it.
 
 ## Author
 
