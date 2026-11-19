@@ -1,6 +1,6 @@
-<p align="center"><img src="assets/banner.svg" alt="Friday — AI weekly planning agent for Claude" width="100%"></p>
+<p align="center"><img src="assets/banner.svg" alt="Friday — AI planning agent for Claude" width="100%"></p>
 
-# Friday — AI Weekly Planning Agent for Claude (Agent Skills)
+# Friday — AI Daily & Weekly Planning Agent for Claude (Agent Skills)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Agent Skills](https://img.shields.io/badge/Claude-Agent%20Skills-DA7857?logo=anthropic)](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
@@ -8,78 +8,85 @@
 [![Works with Asana](https://img.shields.io/badge/Asana-supported-F06A6A?logo=asana&logoColor=white)](#getting-started)
 [![GitHub stars](https://img.shields.io/github/stars/Sohanpatro/friday-planning-agent?style=social)](https://github.com/Sohanpatro/friday-planning-agent/stargazers)
 
-> An open-source **AI planning assistant** that turns your Google Calendar and Asana tasks into a focused weekly plan — a human-in-the-loop, multi-agent **productivity agent** built on Claude Agent Skills.
-
-
-**Friday** is an agentic planning co-pilot built as a set of [Claude Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview). It reads your calendar and task tool, asks you a few sharp questions about last week, and hands back a plan for the week you can approve, tweak, or keep as advice — in about 30 minutes of your time.
-
-> **Status:** Stage 1 of 2. This release ships the core skill, `one-shot-weekly-planning`. Stage 2 will add the full Friday skill suite (nightly close/shutdown, replanning, Asana ↔ calendar placement, and the Hashira job-prep integration).
+> An open-source **AI planning assistant** that matches your **time demand** (tasks, goals, an upstream agent's study blocks) with your **time supply** (your calendar). A human-in-the-loop **productivity agent** built on Claude Agent Skills, working with Google Calendar, Google Sheets and Asana.
 
 ## Why
 
-Most planning tools ask you to do the sorting. Friday does the sorting and shows you the picture: the handful of things that matter this week, how much real capacity you have, and what to drop. You make the calls; nothing touches your calendar or tasks until you say **approve**.
+Most people's plans are fine. Their days just don't follow them. We keep appointments with other people and skip the ones with ourselves. A quick phone check turns into hours. A late night causes an afternoon crash.
+
+Friday hangs each day on **four gates**, each one an appointment with someone else. Every night, at the close, it plans tomorrow **with** you: you see the clashes and the options, and you make every call. If you fall off during the day, you don't rebuild the day. You rejoin at the next gate.
 
 ## How it works
 
-<p align="center"><img src="assets/how-it-works.svg" alt="Friday's five steps: orient and harvest, how you write, five questions, build the report, you choose" width="100%"></p>
+### Every day: four gates and a nightly close
 
-Friday runs in five steps. You speak in two of them (orange). In the rest, the agent works on its own judgment, and it writes down every call it makes for you so you can reverse it.
+<p align="center"><img src="assets/daily-loop.svg" alt="A day on four gates, with the eight-step nightly close" width="100%"></p>
 
-## What you get
+| You say | Friday runs |
+|---|---|
+| `close`, `shutdown`, `plan tomorrow` | **Close**: the 20-minute nightly planning session (above) |
+| `replan`, `I fell off`, `what now` | **Replan**: one minute; points you to the next gate |
+| `where am I` | **Status**: level, streak, the gates left today |
+| `weekly` | **Weekly**: direction for the next 14 days (below) |
 
-<p align="center"><img src="assets/sample-plan-card.svg" alt="Sample Plan Card with the week's Win, bonus aims, protected blocks and the approve/fix/advice choice" width="80%"></p>
+### Every week: the weekly planning run
 
-<sub>Sample Plan Card with made-up data. Alongside it you get a six-section report: where you are, last week, the Win, calendar clarity, task analysis (an Eisenhower-style matrix), and a conclusion.</sub>
+<p align="center"><img src="assets/how-it-works.svg" alt="Weekly planning: orient and harvest, how you write, five questions, build the report, you choose" width="100%"></p>
+
+The weekly run uses the bundled `one-shot-weekly-planning` skill. Then Friday adds its own steps: it scores the week from your log, confirms your level, and writes next week's standard blocks to a dedicated Friday calendar.
+
+### What you get
+
+<p align="center"><img src="assets/sample-plan-card.svg" alt="Sample weekly Plan Card" width="80%"></p>
+
+<sub>A sample weekly Plan Card, with made-up data.</sub>
 
 ### Design principles
 
-- **Human-in-the-loop by default** — exact list of writes shown before approval; anything with attendees is confirmed one at a time.
-- **Numbers are computed, never estimated** — dates, weekdays and counts come from a script-generated `facts.md`; `check.py` refuses to assemble a report with an unverified claim.
-- **Fresh-context review** — the report is checked by agents that did not write it.
-- **Progressive disclosure** — each step's prompt is opened only when that step begins, keeping guidance fresh and context lean.
-- **Privacy-first** — never reads email; nothing written to memory unless asked.
-- **Learns setup over time** — durable facts (main calendar, week start, protected hours) go into `references/user-canon.md`.
+- **You list, I decide.** Friday lays out demand, supply and clashes. It never picks a task, a date or a priority for you.
+- **Nothing written without approval.** You always see "What approve would write" first, then choose: fix it, approve it, or keep it as advice only.
+- **Fresh reads.** Every plan starts from a calendar read made in the same session, never from a summary.
+- **A level system, not willpower.** A ladder of levels with streaks unlocks more focus sessions only after you've proven you can deliver the current level.
+- **Pre-reasoned clash handling.** A *Day Shapes* table holds the options for each kind of conflict, so a small model can run the system reliably.
+- **Writes to its own calendar.** Your main calendar is read-only. Friday writes only to the Friday calendar.
+- **Stateless, with memory in your own storage.** The Board (Google Sheet) holds your canon, log, rules and journal.
 
 ## Repository layout
 
 ```
-skills/one-shot-weekly-planning/
-├── SKILL.md                     # entry point: the job, the steps, the firm rules
-├── prompts/                     # one prompt per step (00, 00b, 01, 02, 03)
-├── references/
-│   ├── writing-standard.md      # how the report reads
-│   ├── section-guide.md         # what each of the 6 sections is for
-│   ├── layout.md                # page layout
-│   ├── harvest-briefs.md        # worker roster and index shapes
-│   ├── connector-notes.md       # calendar / task-tool pull recipes
-│   ├── user-canon.md            # per-user durable setup (empty template)
-│   └── chatgpt.md               # adjustments for non-Claude models
-├── scripts/check.py             # fact gate: list → verify → assemble
-└── routing-eval.md              # should/shouldn't-fire prompts for the trigger
+skills/
+├── friday/SKILL.md                  # daily co-pilot: close, replan, status, weekly
+└── one-shot-weekly-planning/        # the weekly planning run (Stage 1)
+    ├── SKILL.md, prompts/, references/, scripts/check.py
+config/
+└── friday.config.example.md         # your IDs, calendars, day template (copy → friday.config.md, gitignored)
+assets/                              # README visuals
 ```
 
 ## Getting started
 
-**Requirements:** Claude (claude.ai, Claude desktop, or Claude Code) with a connected calendar (e.g. Google Calendar) and a task tool (e.g. Asana). Python 3 for `scripts/check.py`.
+**Requirements:** Claude (claude.ai, the desktop app, or Claude Code) with Google Calendar, Google Sheets and Asana connected. Python 3 for `check.py`.
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/Sohanpatro/friday-planning-agent.git
-   ```
-2. Install the skill:
-   - **Claude Code:** copy `skills/one-shot-weekly-planning` into `~/.claude/skills/` (or your project's `.claude/skills/`).
-   - **claude.ai / desktop:** zip the `one-shot-weekly-planning` folder and upload it under Settings → Capabilities → Skills.
-3. Say **"plan my week"**.
+1. Clone the repo: `git clone https://github.com/Sohanpatro/friday-planning-agent.git`
+2. Copy `config/friday.config.example.md` to `config/friday.config.md`. Fill in your Board sheet, your calendars and your day template. Create a separate "Friday" Google calendar for Friday to write to.
+3. Install both folders under `skills/`. In **Claude Code**, copy them to `~/.claude/skills/`. On **claude.ai**, zip each folder and upload it under Settings → Capabilities → Skills.
+4. At 8 PM, say **"Friday, close"**.
 
 ## Roadmap
 
-- [x] **Stage 1** — core weekly pre-planning skill
-- [ ] **Stage 2** — full Friday suite: nightly close & tomorrow plan, "I fell off" replanning, Asana/Hashira blocks onto a dedicated Friday calendar, Google Drive plan archive
-- [ ] Routing-eval results and sample (anonymized) weekly report
+- [x] **Stage 1**: the weekly pre-planning skill
+- [x] **Stage 2**: Friday, the daily co-pilot (gates, nightly close, replan, ladder, weekly run)
+- [ ] A Board template (Google Sheet) you can copy
+- [ ] An integration guide for upstream demand agents (job prep, study plans)
+- [ ] Routing-eval results
+
+## Credits
+
+The weekly run is inspired by the **Lifehack Method's Win the Week** ([lifehackmethod.com](https://lifehackmethod.com)).
 
 ## Contributing
 
-Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, a ⭐ helps others find it.
+Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, a ⭐ helps other people find it.
 
 ## Author
 
@@ -87,4 +94,4 @@ Built by **Sohan Patro**, a software engineer building agentic AI systems. [Link
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) for Friday and the repo's original material. See Credits for the weekly method's origin.

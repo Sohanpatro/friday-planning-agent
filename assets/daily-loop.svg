@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" font-family="Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="1200" height="470" fill="#FFFFFF" rx="12"/>
+<text x="600" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#1B1F3B">A day on four gates</text>
+<text x="600" y="68" text-anchor="middle" font-size="15" fill="#666">Miss one? Don't repair the day. Rejoin at the next gate.</text>
+<line x1="60" y1="170" x2="1140" y2="170" stroke="#C9CBE0" stroke-width="6" stroke-linecap="round"/>
+<g font-size="14">
+<rect x="60" y="150" width="110" height="40" rx="8" fill="#EAF7EF"/><text x="115" y="175" text-anchor="middle" fill="#1B1F3B">Morning</text>
+<circle cx="260" cy="170" r="34" fill="#DA7857"/><text x="260" y="166" text-anchor="middle" fill="#FFF" font-weight="700">Gate 1</text><text x="260" y="183" text-anchor="middle" fill="#FFF" font-size="11">9:45 AM</text>
+<text x="260" y="232" text-anchor="middle" fill="#444">2 focus sessions</text>
+<rect x="340" y="150" width="120" height="40" rx="8" fill="#F1F1F6"/><text x="400" y="175" text-anchor="middle" fill="#666">Flex · meal</text>
+<circle cx="540" cy="170" r="34" fill="#DA7857"/><text x="540" y="166" text-anchor="middle" fill="#FFF" font-weight="700">Gate 2</text><text x="540" y="183" text-anchor="middle" fill="#FFF" font-size="11">2:30 PM</text>
+<text x="540" y="232" text-anchor="middle" fill="#444">Focus + Tasks block</text>
+<rect x="620" y="150" width="120" height="40" rx="8" fill="#F1F1F6"/><text x="680" y="175" text-anchor="middle" fill="#666">Flex · meal</text>
+<circle cx="820" cy="170" r="34" fill="#1B1F3B"/><text x="820" y="166" text-anchor="middle" fill="#FFF" font-weight="700">Gate 3</text><text x="820" y="183" text-anchor="middle" fill="#FFF" font-size="11">8:00 PM</text>
+<text x="820" y="232" text-anchor="middle" fill="#1B1F3B" font-weight="700">Friday close</text>
+<circle cx="1000" cy="170" r="34" fill="#DA7857"/><text x="1000" y="166" text-anchor="middle" fill="#FFF" font-weight="700">Gate 4</text><text x="1000" y="183" text-anchor="middle" fill="#FFF" font-size="11">9:00 PM</text>
+<text x="1000" y="232" text-anchor="middle" fill="#444">Evening commitment</text>
+<rect x="1070" y="150" width="80" height="40" rx="8" fill="#EEF2FF"/><text x="1110" y="175" text-anchor="middle" fill="#1B1F3B">Sleep</text>
+</g>
+<rect x="60" y="270" width="1080" height="170" rx="12" fill="#F7F7FA" stroke="#E2E2EA"/>
+<text x="90" y="302" font-size="16" font-weight="700" fill="#1B1F3B">The nightly close (8:10–8:30 PM, hard stop)</text>
+<g font-size="14" fill="#333">
+<text x="90" y="334">1 · Fresh read of tomorrow's calendars</text>
+<text x="90" y="358">2 · Quick log: gates hit, energy, one win, one loss</text>
+<text x="90" y="382">3 · Clashes resolved from pre-reasoned Day Shapes</text>
+<text x="90" y="406">4 · Tasks triaged: done / tomorrow / new date / drop</text>
+<text x="620" y="334">5 · Demand agent's blocks mapped onto sessions</text>
+<text x="620" y="358">6 · Three checks: food, waiting emails, likely break</text>
+<text x="620" y="382">7 · Ladder: streaks and level updated</text>
+<text x="620" y="406" fill="#DA7857" font-weight="700">8 · "What approve would write" → you choose</text>
+</g></svg>

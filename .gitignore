@@ -5,3 +5,4 @@ __pycache__/
 work/
 facts.md
 *.local.md
+config/friday.config.md
