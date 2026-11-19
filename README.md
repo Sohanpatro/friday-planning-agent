@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="Friday — AI weekly planning agent for Claude" width="100%"></p>
+
 # Friday — AI Weekly Planning Agent for Claude (Agent Skills)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -19,13 +21,15 @@ Most planning tools ask you to do the sorting. Friday does the sorting and shows
 
 ## How it works
 
-```
- Step 0  Orient & harvest   →  parallel worker agents pull calendar + tasks, save raw data, return lean indexes
- Step 0b How you write      →  agent internalizes the writing standard
- Step 1  Post-mortem        →  5 questions about last week, one at a time, each built on the last answer
- Step 2  Build the report   →  6-section report; two fresh reviewer agents (critic + fact-checker); scripts/check.py gates every number/date
- Step 3  Choose & write     →  you approve / refine / keep-as-advice; only then are calendar blocks and tasks written
-```
+<p align="center"><img src="assets/how-it-works.svg" alt="Friday's five steps: orient and harvest, how you write, five questions, build the report, you choose" width="100%"></p>
+
+Friday runs in five steps. You speak in two of them (orange). In the rest, the agent works on its own judgment, and it writes down every call it makes for you so you can reverse it.
+
+## What you get
+
+<p align="center"><img src="assets/sample-plan-card.svg" alt="Sample Plan Card with the week's Win, bonus aims, protected blocks and the approve/fix/advice choice" width="80%"></p>
+
+<sub>Sample Plan Card with made-up data. Alongside it you get a six-section report: where you are, last week, the Win, calendar clarity, task analysis (an Eisenhower-style matrix), and a conclusion.</sub>
 
 ### Design principles
 
@@ -76,6 +80,10 @@ skills/one-shot-weekly-planning/
 ## Contributing
 
 Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). If Friday helps you win your week, a ⭐ helps others find it.
+
+## Author
+
+Built by **Sohan Patro**, a software engineer building agentic AI systems. [LinkedIn](https://www.linkedin.com/in/sohan-patro-14086a130/) · [GitHub](https://github.com/Sohanpatro)
 
 ## License
 

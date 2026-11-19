@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" font-family="Segoe UI,Helvetica,Arial,sans-serif">
+<rect width="900" height="640" rx="14" fill="#FFFFFF" stroke="#E2E2EA"/>
+<rect width="900" height="64" rx="14" fill="#1B1F3B"/><rect y="50" width="900" height="14" fill="#1B1F3B"/>
+<text x="32" y="41" font-size="22" font-weight="700" fill="#FFFFFF">Plan Card · Week of Mar 2</text><text x="868" y="41" text-anchor="end" font-size="14" fill="#E8B4A0">Sample · fictional data</text>
+<g font-size="15" fill="#333">
+<text x="32" y="104" font-size="13" font-weight="700" fill="#DA7857">THE WIN</text>
+<text x="32" y="130" font-size="18" font-weight="700" fill="#1B1F3B">Ship the client onboarding demo</text>
+<text x="32" y="154">Done means: recorded 5-minute walkthrough sent to Dana. Checkpoint: Wednesday 5 PM.</text>
+<text x="32" y="196" font-size="13" font-weight="700" fill="#DA7857">BONUS AIMS</text>
+<text x="32" y="220">• Two system-design drills  • Close out the Q1 expense report</text>
+<text x="32" y="262" font-size="13" font-weight="700" fill="#DA7857">THE WEEK'S SHAPE</text>
+<text x="32" y="286">Heavy Mon–Wed on the demo, lighter Thu, Friday kept for catch-up and the gym.</text>
+<text x="32" y="328" font-size="13" font-weight="700" fill="#DA7857">BLOCKS PROTECTED</text>
+</g>
+<g font-size="14">
+<rect x="32" y="342" width="200" height="54" rx="8" fill="#EEF2FF"/><text x="44" y="365" font-weight="700" fill="#1B1F3B">Demo build</text><text x="44" y="385" fill="#555">Mon–Wed · 9–11:30 AM</text>
+<rect x="246" y="342" width="200" height="54" rx="8" fill="#EEF2FF"/><text x="258" y="365" font-weight="700" fill="#1B1F3B">Design drills</text><text x="258" y="385" fill="#555">Tue, Thu · 2–3 PM</text>
+<rect x="460" y="342" width="200" height="54" rx="8" fill="#EAF7EF"/><text x="472" y="365" font-weight="700" fill="#1B1F3B">Gym</text><text x="472" y="385" fill="#555">Mon–Fri · 4–5 PM</text>
+<rect x="674" y="342" width="194" height="54" rx="8" fill="#FFF1EB"/><text x="686" y="365" font-weight="700" fill="#1B1F3B">Family call</text><text x="686" y="385" fill="#555">Sun · 8 PM (fixed)</text>
+</g>
+<g font-size="15" fill="#333">
+<text x="32" y="436" font-size="13" font-weight="700" fill="#DA7857">SET ASIDE</text>
+<text x="32" y="460">Website redesign: not this week. Revisit Mar 16.</text>
+<line x1="32" y1="490" x2="868" y2="490" stroke="#E2E2EA"/>
+<text x="32" y="522" font-size="13" font-weight="700" fill="#1B1F3B">WHAT APPROVE WOULD WRITE</text>
+<text x="32" y="546">+ 9 calendar blocks  ·  + 4 task tags  ·  1 event with others: "I'd ask you first"</text>
+</g>
+<g font-size="14" font-weight="700">
+<rect x="32" y="574" width="140" height="40" rx="20" fill="#FFFFFF" stroke="#1B1F3B"/><text x="102" y="599" text-anchor="middle" fill="#1B1F3B">1 · Fix it</text>
+<rect x="186" y="574" width="160" height="40" rx="20" fill="#DA7857"/><text x="266" y="599" text-anchor="middle" fill="#FFFFFF">2 · Approve</text>
+<rect x="360" y="574" width="170" height="40" rx="20" fill="#FFFFFF" stroke="#1B1F3B"/><text x="445" y="599" text-anchor="middle" fill="#1B1F3B">3 · Advice only</text>
+</g></svg>
