@@ -132,7 +132,7 @@ Issues and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). If Friday he
 
 ## Author
 
-Built by **Sohan Patro**, a software engineer building agentic AI systems. [LinkedIn](https://www.linkedin.com/in/sohan-patro-14086a130/) · [GitHub](https://github.com/Sohanpatro)
+Built by **Sohan Patro**, a software engineer building agentic AI systems. [LinkedIn](https://www.linkedin.com/in/sohanpatro/) · [GitHub](https://github.com/Sohanpatro)
 
 ## License
 
